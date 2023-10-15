@@ -16,10 +16,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
   background-color: white;
 }
 
+nav, footer {
+  position: relative;
+  z-index: 1;
+}
 
 html {
   scroll-behavior: smooth;
