@@ -1520,3 +1520,6 @@ var pJS = function(tag_id, params){
     xhr.send();
   
   };
+document.addEventListener('DOMContentLoaded', function () {
+    particlesJS('particles-js', particleSettings);
+});
