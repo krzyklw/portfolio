@@ -119,13 +119,13 @@ var pJS = function(tag_id, params){
           }
         },
         color: {
-          value: '#fff'
+          value: '#14bc84'
         },
         shape: {
           type: 'circle',
           stroke: {
             width: 0,
-            color: '#ff0000'
+            color: '#14bc84'
           },
           polygon: {
             nb_sides: 5
@@ -159,7 +159,7 @@ var pJS = function(tag_id, params){
         line_linked: {
           enable: true,
           distance: 100,
-          color: '#fff',
+          color: '#14bc84',
           opacity: 1,
           width: 1
         },
@@ -314,7 +314,6 @@ var pJS = function(tag_id, params){
   
     };
   
-  
     pJS.fn.canvasPaint = function(){
       pJS.canvas.ctx.fillRect(0, 0, pJS.canvas.w, pJS.canvas.h);
     };
@@ -322,9 +321,6 @@ var pJS = function(tag_id, params){
     pJS.fn.canvasClear = function(){
       pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
     };
-  
-  
-   
   
     pJS.fn.particle = function(color, opacity, position){
   
@@ -337,23 +333,19 @@ var pJS = function(tag_id, params){
           this.vs = this.vs * Math.random();
         }
       }
-  
-     
+
       this.x = position ? position.x : Math.random() * pJS.canvas.w;
       this.y = position ? position.y : Math.random() * pJS.canvas.h;
   
-     
       if(this.x > pJS.canvas.w - this.radius*2) this.x = this.x - this.radius;
       else if(this.x < this.radius*2) this.x = this.x + this.radius;
       if(this.y > pJS.canvas.h - this.radius*2) this.y = this.y - this.radius;
       else if(this.y < this.radius*2) this.y = this.y + this.radius;
   
-     
       if(pJS.particles.move.bounce){
         pJS.fn.vendors.checkOverlap(this, position);
       }
   
-     
       this.color = {};
       if(typeof(color.value) == 'object'){
   
@@ -471,9 +463,6 @@ var pJS = function(tag_id, params){
           }
         }
       }
-  
-      
-  
     };
   
     pJS.fn.particle.prototype.draw = function() {
@@ -653,7 +642,6 @@ var pJS = function(tag_id, params){
           p.x = Math.random() * pJS.canvas.w;
         }
   
-       
         switch(pJS.particles.move.out_mode){
           case 'bounce':
             if (p.x + p.radius > pJS.canvas.w) p.vx = -p.vx;
@@ -676,7 +664,6 @@ var pJS = function(tag_id, params){
           pJS.fn.modes.repulseParticle(p);
         }
   
-       
         if(pJS.particles.line_linked.enable || pJS.particles.move.attract.enable){
           for(var j = i + 1; j < pJS.particles.array.length; j++){
             var p2 = pJS.particles.array[j];
@@ -705,14 +692,8 @@ var pJS = function(tag_id, params){
     };
   
     pJS.fn.particlesDraw = function(){
-  
-     
       pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
-  
-     
       pJS.fn.particlesUpdate();
-  
-     
       for(var i = 0; i < pJS.particles.array.length; i++){
         var p = pJS.particles.array[i];
         p.draw();
@@ -739,10 +720,7 @@ var pJS = function(tag_id, params){
       pJS.fn.vendors.start();
   
     };
-  
-  
-   
-  
+
     pJS.fn.interact.linkParticles = function(p1, p2){
   
       var dx = p1.x - p2.x,
@@ -847,7 +825,6 @@ var pJS = function(tag_id, params){
   
     };
   
-  
     pJS.fn.modes.bubbleParticle = function(p){
   
      
@@ -911,17 +888,13 @@ var pJS = function(tag_id, params){
           init();
         }
   
-  
-       
         if(pJS.interactivity.status == 'mouseleave'){
           init();
         }
       
       }
   
-     
       else if(pJS.interactivity.events.onclick.enable && isInArray('bubble', pJS.interactivity.events.onclick.mode)){
-  
   
         if(pJS.tmp.bubble_clicking){
           var dx_mouse = p.x - pJS.interactivity.mouse.click_pos_x,
@@ -1072,7 +1045,6 @@ var pJS = function(tag_id, params){
   
     }
   
-  
     pJS.fn.modes.grabParticle = function(p){
   
       if(pJS.interactivity.events.onhover.enable && pJS.interactivity.status == 'mousemove'){
@@ -1107,10 +1079,6 @@ var pJS = function(tag_id, params){
       }
   
     };
-  
-  
-  
-   
   
     pJS.fn.vendors.eventsListeners = function(){
   
@@ -1149,7 +1117,6 @@ var pJS = function(tag_id, params){
   
         });
   
-       
         pJS.interactivity.el.addEventListener('mouseleave', function(e){
   
           pJS.interactivity.mouse.pos_x = null;
@@ -1160,7 +1127,6 @@ var pJS = function(tag_id, params){
   
       }
   
-     
       if(pJS.interactivity.events.onclick.enable){
   
         pJS.interactivity.el.addEventListener('click', function(){
@@ -1211,7 +1177,6 @@ var pJS = function(tag_id, params){
           
       }
   
-  
     };
   
     pJS.fn.vendors.densityAutoParticles = function(){
@@ -1223,11 +1188,7 @@ var pJS = function(tag_id, params){
         if(pJS.tmp.retina){
           area = area/(pJS.canvas.pxratio*2);
         }
-  
-       
         var nb_particles = area * pJS.particles.number.value / pJS.particles.number.density.value_area;
-  
-       
         var missing_particles = pJS.particles.array.length - nb_particles;
         if(missing_particles < 0) pJS.fn.modes.pushParticles(Math.abs(missing_particles));
         else pJS.fn.modes.removeParticles(missing_particles);
@@ -1235,7 +1196,6 @@ var pJS = function(tag_id, params){
       }
   
     };
-  
   
     pJS.fn.vendors.checkOverlap = function(p1, position){
       for(var i = 0; i < pJS.particles.array.length; i++){
@@ -1253,10 +1213,7 @@ var pJS = function(tag_id, params){
       }
     };
   
-  
     pJS.fn.vendors.createSvgImg = function(p){
-  
-     
       var svgXml = pJS.tmp.source_svg,
           rgbHex = /#([0-9A-F]{3,6})/gi,
           coloredSvgXml = svgXml.replace(rgbHex, function (m, r, g, b) {
@@ -1359,7 +1316,6 @@ var pJS = function(tag_id, params){
   
     };
   
-  
     pJS.fn.vendors.draw = function(){
   
       if(pJS.particles.shape.type == 'image'){
@@ -1397,8 +1353,6 @@ var pJS = function(tag_id, params){
   
   
     pJS.fn.vendors.checkBeforeDraw = function(){
-  
-     
       if(pJS.particles.shape.type == 'image'){
   
         if(pJS.tmp.img_type == 'svg' && pJS.tmp.source_svg == undefined){
@@ -1430,8 +1384,6 @@ var pJS = function(tag_id, params){
       pJS.fn.canvasPaint();
       pJS.fn.particlesCreate();
       pJS.fn.vendors.densityAutoParticles();
-  
-     
       pJS.particles.line_linked.color_rgb_line = hexToRgb(pJS.particles.line_linked.color);
   
     };
@@ -1447,23 +1399,10 @@ var pJS = function(tag_id, params){
       }
   
     };
-  
-  
-  
-  
-   
-  
-  
     pJS.fn.vendors.eventsListeners();
-  
     pJS.fn.vendors.start();
-    
-  
-  
   };
-  
- 
-  
+
   Object.deepExtend = function(destination, source) {
     for (var property in source) {
       if (source[property] && source[property].constructor &&
@@ -1518,17 +1457,11 @@ var pJS = function(tag_id, params){
   function isInArray(value, array) {
     return array.indexOf(value) > -1;
   }
-  
-  
- 
-  
+
   window.pJSDom = [];
   
   window.particlesJS = function(tag_id, params){
   
-   
-  
-   
     if(typeof(tag_id) != 'string'){
       params = tag_id;
       tag_id = 'particles-js';
@@ -1550,8 +1483,7 @@ var pJS = function(tag_id, params){
         pJS_tag.removeChild(exist_canvas[0]);
       }
     }
-  
-   
+
     var canvas_el = document.createElement('canvas');
     canvas_el.className = pJS_canvas_class;
   
@@ -1570,8 +1502,7 @@ var pJS = function(tag_id, params){
   };
   
   window.particlesJS.load = function(tag_id, path_config_json, callback){
-  
-   
+
     var xhr = new XMLHttpRequest();
     xhr.open('GET', path_config_json);
     xhr.onreadystatechange = function (data) {
