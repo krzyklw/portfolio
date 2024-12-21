@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anton</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="loader">
+        <h1 data-splitting>Welcome to my Portfolio</h1>
+    </div>
+
+    <nav>
+        <div class="logo">Anton</div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1 class="glitch-text" data-splitting>Creative</h1>
+                <h1 class="main-title" data-splitting>Designer</h1>
+                <p class="subtitle">Typography • Layout • Motion</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <section id="work" class="work">
+            <h2 data-splitting>Selected Works</h2>
+            <div class="behance-projects">
+                <div class="behance-embed">
+                    <div class="tilt-overlay"></div>
+                    <iframe src="https://www.behance.net/embed/project/211869815" 
+                        frameborder="0" 
+                        allowfullscreen 
+                        aria-hidden="false" 
+                        tabindex="0">
+                    </iframe>
+                </div>
+                <div class="behance-embed">
+                    <div class="tilt-overlay"></div>
+                    <iframe src="https://www.behance.net/embed/project/213026725" 
+                        frameborder="0" 
+                        allowfullscreen 
+                        aria-hidden="false" 
+                        tabindex="0">
+                    </iframe>
+                </div>
+            </div>
+            <div class="project-grid">
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://source.unsplash.com/random/800x600?typography" alt="Project 1">
+                    </div>
+                    <h3>Typography Project</h3>
+                    <p>Experimental typography design</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://source.unsplash.com/random/800x600?design" alt="Project 2">
+                    </div>
+                    <h3>Layout Design</h3>
+                    <p>Editorial layout exploration</p>
+                </div>
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="https://source.unsplash.com/random/800x600?art" alt="Project 3">
+                    </div>
+                    <h3>Motion Graphics</h3>
+                    <p>Animated visual stories</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2 data-splitting>About Me</h2>
+                <p class="bio">I'm a passionate graphic designer and layout artist with a focus on creating unique typographic experiences and memorable visual narratives.</p>
+                <div class="skills">
+                    <div class="skill">
+                        <span class="skill-name">Typography</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Layout Design</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span class="skill-name">Motion Web Graphics</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2 data-splitting>Let's Create</h2>
+                    <h2 class="gradient-text" data-splitting>Together</h2>
+                    <p class="contact-subtitle">Have a project in mind? Let's bring it to life!</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" placeholder=" " required>
+                            <label>Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder=" " required>
+                            <label>Email</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder=" " required></textarea>
+                        <label>Tell me about your project</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <div class="contact-decoration">
+                    <div class="circle"></div>
+                    <div class="square"></div>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.behance.net/krazyklaw" target="_blank" aria-label="Behance">
+                <i class="fab fa-behance"></i>
+            </a>
+            <a href="https://github.com/krzyklw" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Anton</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
